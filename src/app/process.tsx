@@ -1,13 +1,16 @@
 "use client";
-import { useState } from 'react'
-import { Input } from './input'
-import { Output } from './output'
-import { CopyButton } from './copy'
+import { useState } from 'react';
+import { CopyButton } from './copy';
+import { Input } from './input';
+import { Output } from './output';
 
 
 function replaceBrackets(str: string) {
     str = str.replace(/「/g, "『");
     str = str.replace(/」/g, "』");
+    str = str.replace(/\n/g, "");
+    str = str.replace(/\r/g, "");
+    str = str.replace(/\r\n/g, "");
     return str;
 }
 
